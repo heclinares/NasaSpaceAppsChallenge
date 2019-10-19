@@ -1,0 +1,143 @@
+contract Product =
+
+  record material = {
+    name: string, /* gold, platinum, cooper, etc */
+    amount: string,
+    unit: string } /* g -> grams, ml -> mililiter, etc */
+
+  record materialExtraction = {
+    material: material,
+    process: string,
+    location: string }
+    
+  record manufactureProcess = {
+    name: string,
+    location: string,
+    date: string }
+    
+  record manufacture = {
+    company: string,
+    process: map(int, manufactureProcess) }
+  
+  record transport = {
+    company: string,
+    method: string,
+    distance: string,
+    startDate: string,
+    endDate: string,
+    locationFrom: string,
+    locationTo: string }
+  
+  record state = {
+    owner            : address,
+    total_supply     : int,
+    balances         : map(address, int),
+    name             : string,
+    brand            : string,
+    url              : string,
+    img              : string,
+    description      : string,
+    id               : string,
+    extraction       : map(int, materialExtraction),
+    manufacture      : manufacture,
+    transport        : map(int, transport)}
+
+  stateful entrypoint init(n : string, b : string, u : string, i : string, d : string, p : int, id2 : string) = {
+    owner = Call.caller,
+    total_supply = 0,
+    balances = {},
+    name = n,
+    url = u,
+    img = i,
+    description = d,
+    brand = b,
+    id = id2,
+    manufacture = {
+        company = "",
+        process = {} },
+    extraction = {},
+    transport = {}}
+
+  entrypoint total_supply() : int = state.total_supply
+
+  entrypoint balance_of(who: address) : int = lookup_by_address(who, state.balances, 0)
+  
+  entrypoint get_name() : string = state.name
+  
+  entrypoint get_image() : string = state.img
+
+  entrypoint get_url() : string = state.url
+  
+  entrypoint get_description() : string = state.description
+
+  entrypoint get_brand() : string = state.brand
+
+  entrypoint get_id() : string = state.id
+
+  stateful entrypoint set_image(i : string) = 
+    only_owner()
+    put(state{img = i})
+
+  stateful entrypoint set_name(i : string) = 
+    only_owner()
+    put(state{name = i})
+
+  stateful entrypoint set_url(i : string) = 
+    only_owner()
+    put(state{url = i})
+
+  stateful entrypoint set_description(i : string) = 
+    only_owner()
+    put(state{description = i})
+
+  stateful entrypoint set_brand(i : string) = 
+    only_owner()
+    put(state{brand = i})
+
+  stateful entrypoint set_id(i : string) = 
+    only_owner()
+    put(state{id = i})
+
+  stateful entrypoint  withdraw() =
+    only_owner()
+    Chain.spend(Call.caller, Contract.balance)
+
+  stateful entrypoint transfer(to: address, value: int) : bool =
+    transfer'(Call.caller, to, value)
+
+  private stateful function transfer'(from: address, to: address, value: int) : bool =
+    require'(value > 0, "Value is sub zero")
+    require'(value =< balance_of(from), "Not enough balance")
+    
+    put(state{
+      balances[from] = sub(balance_of(from), value),
+      balances[to] = add(balance_of(to), value)})
+
+    true
+
+  stateful private function mint(account: address, value: int) : bool =
+    put(state{total_supply = add(state.total_supply, value),
+      balances[account] = add(balance_of(account), value)})
+
+    true
+
+  private function add(a : int, b : int) : int =
+    let c : int = a + b
+    require(c >= a, "Error")
+    c
+
+  private function sub(a : int, b : int) : int =
+    require(b =< a, "Error")
+    a - b
+
+  private function require'(b : bool, err : string) =
+    if(!b)
+      abort(err)
+
+  private function only_owner() =
+    require'(Call.caller == state.owner, "Only owner can mint!")
+
+  private function lookup_by_address(k : address, m, v) =
+  	switch(Map.lookup(k, m))
+	    None    => v
+	    Some(x) => x
