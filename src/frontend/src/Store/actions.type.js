@@ -1,0 +1,7 @@
+export const CHECK_AUTH = 'checkAuth'
+export const FETCH_ACCOUNT = 'fetchAccount'
+export const LOGIN = 'login'
+export const REFRESH = 'refresh'
+export const LOGOUT = 'logout'
+export const REGISTER = 'register'
+export const UPDATE_USER = 'updateUser'

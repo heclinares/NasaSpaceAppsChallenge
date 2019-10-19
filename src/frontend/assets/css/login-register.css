@@ -1,0 +1,65 @@
+h1 {
+  /*color: #000;*/
+}
+
+.auth-page a {
+  /*color: rgb(33, 147, 176);*/
+  color: #fff;
+  text-decoration: none;
+}
+
+.auth-page {
+  min-height: 100vh; background-color: #ddd; background-position: bottom center; background-repeat: repeat-x; background-size: cover;
+}
+
+.btn-primary {
+  background-color: rgb(33, 147, 176);
+  border-color: #48caf2;
+}
+
+.btn-primary:hover {
+  background-color: #48caf2;
+  border-color: rgb(33, 147, 176);
+}
+
+.white-box {
+  background: rgba(255,255,255,0.25); border: 1px solid #ddd; border-top: 1px solid #fff; padding: 40px; box-shadow: 0 15px 20px rgba(0,0,0,0.25); max-width: 75%; margin: 0 auto
+}
+
+.footer-text {
+  color: #eee; margin-top: 80px; font-size: small
+}
+
+.box-container {
+  margin-top: 10%;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .white-box {
+    padding: 20px; max-width: 90%;
+  }
+  .footer-text {
+    margin-top: 10px;
+  }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
+  
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 992px) {
+  
+ }
+ 
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 993px) and (max-width: 1199px) {
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+ }

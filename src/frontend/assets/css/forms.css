@@ -1,0 +1,54 @@
+input {
+  background: #fff; padding: 10px; border: none; border-bottom: 1px solid #003b8a; margin-bottom: 15px;
+}
+label {
+  color: purple;
+}
+.profile label {
+  text-align: right;
+}
+
+.profile-form {
+  background: #fff;
+  padding: 80px 20px 20px 20px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.25);
+}
+
+.profile-form input {
+  margin-bottom: 30px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .profile label {
+    text-align: left;
+  }
+  .profile-form {
+    padding: 20px;
+  }
+  .profile-form input {
+    margin-bottom: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .profile label {
+    text-align: left;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 992px) {
+  
+}
+ 
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 993px) and (max-width: 1199px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}

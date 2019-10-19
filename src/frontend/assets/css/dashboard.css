@@ -1,0 +1,265 @@
+body {
+  overflow: hidden;
+}
+h1 {
+  color: #000;
+}
+
+#dashboard h1 {
+  color: #000;
+}
+.dashboard-content {
+  /* padding: 20px; */
+}
+#dashboard .dashboard-right {
+  width: calc(100% - 280px);
+  padding: 0;
+  height: 100vh;
+  overflow: auto;
+  background: url(/static/img/bg3.jpg);
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  background-color: #eee;
+}
+
+#dashboard .left-bar {
+  background-image: linear-gradient(to top, #00064b 0%, #003b8a 100%);
+  min-height: 100vh;
+  padding-top: 50px;
+  max-width: 280px;
+  width: 100%;
+}
+
+#dashboard .left-menu {
+  color: #fff;
+  list-style: none;
+  width: 75%;
+  margin: 20px auto 0 auto;
+  padding-left: 10px;
+}
+
+#dashboard .left-menu-2 {
+  margin: 10px auto 0 auto;
+}
+
+#dashboard .left-menu li {
+  text-align: left;
+}
+
+#dashboard .left-menu li:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+#dashboard .left-menu li a {
+  color: #fff;
+}
+
+#dashboard .left-menu li a img {
+  margin-right: 20px;
+}
+
+#dashboard h4 {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width: auto;
+  text-align: left;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.btn-trade {
+  margin-top: 20px;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 40px !important;
+  color: #fff;
+  font-weight: bold !important;
+  border-radius: 10px !important;
+}
+
+#dashboard .top-bar {
+  background: rgba(255,255,255,0.5);
+  min-height: 110px;
+  padding: 30px 40px;
+  z-index: 3;
+  position: relative;
+}
+
+
+ul.profile-list {
+  list-style-type: none;
+  padding: 0;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.25);
+}
+
+ul.profile-list li {
+  color: purple;
+  padding: 20px;
+  list-style-type: none;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+ul.profile-list li:hover {
+  background: #eee;
+}
+
+ul.profile-list li a {
+  color: purple;
+}
+
+.wallet-deposit-bank-section {
+  padding: 20px;
+  border: 1px solid #eee;
+}
+
+.btn-primary {
+  background: linear-gradient(to top, #00064b 0%, #003b8a 100%);
+  border-color: #0086fb;
+}
+
+.btn-primary:hover {
+  background-color: #004bca;
+  border-color: #00c6fb;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+}
+
+#user-text-info {
+  display: block;
+}
+
+.dashboard-top-vert-separator {
+  float: right; margin-top: -11px;
+}
+
+.right-bracket {
+  float: right;
+}
+
+.create-type {
+  background: #fff;
+  padding: 20px;
+  border: #eee;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.25);
+  min-height: 300px;
+  position: relative;
+}
+
+.create-type button {
+  position: absolute;
+  bottom: 20px;
+}
+
+.create-type li {
+  list-style-image: url("/static/img/checked-25.png");
+}
+
+.create-type ul {
+  list-style-image: url("/static/img/checked-25.png");
+}
+
+.create-type .badge {
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.white-box {
+  background: rgba(255,255,255,0.25); border: 1px solid #ddd; border-top: 1px solid #fff; padding: 40px; box-shadow: 0 15px 20px rgba(0,0,0,0.25); max-width: 75%; margin: 0 auto
+}
+
+.attached-menu {
+  
+}
+
+.attached-menu a {
+  color: #fff;
+}
+
+.attached-menu a div:hover{
+  background: #fff;
+  color: #000;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  #dashboard .top-bar {
+    min-height: 71px;
+    padding: 10px 20px;
+    font-size: 0.6rem;
+  }
+
+  #dashboard .dashboard-right { 
+    width: 100%; 
+  }
+  #user-text-info {
+    display: none;
+  }
+  .dashboard-title {
+    font-size: 1.2rem;
+    margin-top: 14px !important;
+  }
+  .dashboard-top-vert-separator {
+    display: none;
+  }
+  .right-bracket {
+    margin-top: 15px;
+  }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.2rem;
+  }
+  #dashboard .top-bar {
+    font-size: 0.8rem;
+  }
+  #user-text-info {
+    display: none;
+  }
+  .dashboard-top-vert-separator {
+    display: none;
+  }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .dashboard-title {
+    font-size: 1.4rem;
+  }
+  #dashboard .top-bar {
+    font-size: 0.9rem;
+  }
+  #user-text-info {
+    display: block;
+  }
+ }
+ 
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 993px) and (max-width: 1199px) {
+  .dashboard-title {
+    font-size: 1.4rem;
+  }
+  #user-text-info {
+    display: block;
+  }
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+ }

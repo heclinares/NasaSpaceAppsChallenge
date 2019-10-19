@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cycle chain - Circular economy blockchain</title>
+        
+        <!-- Favicon -->
+        <!--<link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/static/img/favicon.png">-->
+        
+        <!-- Import Ionicon icons & Google Fonts our Bootstrap theme relies on -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+        </style>  
+        
+         
+    </head>
+    <body>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+        
+        <div id="privacy-policy" style="display: none"></div>
+    
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+      function setCookie(cname, cvalue, exdays) {
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          var expires = "expires="+ d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      
+      function getCookie(cname) {
+          var name = cname + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i <ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                  return c.substring(name.length, c.length);
+              }
+          }
+          return "";
+      }
+      
+      function acceptPrivacy() {
+        setCookie('accepted-privacy', 1, 365);
+        document.getElementById('privacy-policy').style.display = 'none';
+      }
+      if(!getCookie('accepted-privacy')) {
+        document.getElementById('privacy-policy').innerHTML = 'This site uses cookies. More info in our <a href="#" onclick="window.open(\'/#/privacy-policy\'); return false;">privacy policy</a> <button class="btn btn-primary" onclick="acceptPrivacy()">Accept</button>';
+        document.getElementById('privacy-policy').style.display = 'block';
+      }
+      else
+        document.getElementById('privacy-policy').style.display = 'none';
+    </script>
+    </body>
+</html>
